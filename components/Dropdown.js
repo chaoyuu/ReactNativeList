@@ -1,10 +1,30 @@
-import RNPickerSelect from 'react-native-picker-select'
-import React from 'react'
-import{View,StyleSheet} from 'react-native'
+import React, {useState,useEffect} from 'react';
+import {View, StyleSheet} from 'react-native'
+import RNPickerSelect from 'react-native-picker-select';
+import Theme from './Theme';
 
-export function Dropdown(props){
-    return (<View>
-     <RNPickerSelect onValueChange={props.handler }items ={props.categories}  />
+export function Dropdown( props ) {
+  return(
+    <View>
+      <RNPickerSelect 
+      items={props.categories} 
+      onValueChange={props.handler}
+      style={PickerStyle}
+      />
     </View>
-    )
+  )
 }
+
+const PickerStyle = StyleSheet.create({
+  inputIOS: {
+    padding: 10,
+    backgroundColor: Theme.silver,
+    textAlign: 'center',
+  },
+  inputIOS: {
+    padding: 10,
+    backgroundColor: Theme.silver,
+    textAlign: 'center',
+  },
+  
+})
